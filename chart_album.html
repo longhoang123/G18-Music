@@ -10,6 +10,7 @@
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/chart.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/snowfall.css">
 </head>
 <body>
 
@@ -26,8 +27,9 @@
 						<!-- Logo -->
 						<div class="logo">
 							<a href="#" class="d-flex flex-row align-items-end justify-content-start">
-								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
-								<span class="logo_text">G18 Music</span>
+								<span><img width="90px" height="90px" src="images/logo.png"></span>
+								<p class="logo_text"></p>
+								
 							</a>
 						</div>
 
@@ -35,6 +37,7 @@
 						<nav class="main_nav">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li><a href="index.html">Trang Chủ</a></li>
+								<li><a href="category.html">Thể loại</a></li>
 								<li><a href="artists.html">Nghệ sĩ</a></li>
 								<li class="active"><a href="chart.html">Bảng xếp hạng</a></li>
 								<li ><a href="blog.html">Tin âm nhạc</a></li>
@@ -68,6 +71,7 @@
 				<nav class="menu_nav">
 					<ul class="d-flex flex-column align-items-center justify-content-start">
 						<li><a href="index.html">Trang Chủ</a></li>
+						<li><a href="category.html">Thể loại</a></li>
 						<li><a href="artists.html">Nghệ sĩ</a></li>
 						<li><a href="#">Bảng xếp hạng</a></li>
 						<li><a href="blog.html">Tin âm nhạc</a></li>
@@ -96,7 +100,7 @@
 	</div>
 
 	<!-- Chart -->
-    <div class="chart">
+    <div class="chart" style="background-image: url('images/background.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -146,7 +150,7 @@
 								</div>
 								<!-- songs_info -->
 								<div class="songs_list_col3">
-									<a class="songs_name" href="#">
+									<a class="songs_name" href="music1.html">
 										Một Cõi Đi Về
 									</a><br>
 									<a class="songs_artist" href="#">
@@ -179,7 +183,7 @@
 								</div>
 								<!-- songs_info -->
 								<div class="songs_list_col3">
-									<a class="songs_name" href="#">
+									<a class="songs_name" href="music2.html">
 										Hạ Trắng
 									</a><br>
 									<a class="songs_artist" href="#">
@@ -213,7 +217,7 @@
 								</div>
 								<!-- songs_info -->
 								<div class="songs_list_col3">
-									<a class="songs_name" href="#">
+									<a class="songs_name" href="music3.html">
 										Dấu Chân Địa Đàng
 									</a><br>
 									<a class="songs_artist" href="#">
@@ -516,13 +520,15 @@
 				<div class="row">
 					<div class="col text-center">
 
-						<!-- Logo -->
-						<div class="logo">
-							<a href="#" class="d-flex flex-row align-items-end justify-content-start">
-								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
-								<span class="logo_text">music</span>
-							</a>
-						</div>
+							<!-- Logo -->
+							<div class="logo">
+								<a href="#" class="d-flex flex-row align-items-end justify-content-start">
+									<span><img width="90px" height="90px" src="images/logo.png"></span>
+									<p class="logo_text">G18 Music</p>
+									
+								</a>
+							</div>
+	
 
 						<!-- Footer Social -->
 						<div class="footer_social">
@@ -552,8 +558,34 @@
 		</div>
 			
 	</footer>
+	<!--Search button-->
+	<div class="event__search__floater">
+		<div class="search__anchor">
+		  <form id="event-search-form" action="get">
+				<input type="text" class="search__bar" placeholder="Tìm kiếm nhanh">
+			<input class="search__submit" type="submit">
+			<div class="search__toggler"></div>
+		  </form>
+		  
+		  </div>
+	</div>
 </div>
-
+<snowfall>
+	<snowflake><span>❄</span>️️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><span>❄</span>️️</snowflake>
+	<snowflake><span>❄</span>️️</snowflake>
+	<snowflake><span>❄</span>️️</snowflake>
+	<snowflake><span>❄</span>️️</snowflake>
+	<snowflake><span>❄</span>️️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+	<snowflake><img src="images/snowflake.png">️</snowflake>
+</snowfall>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>

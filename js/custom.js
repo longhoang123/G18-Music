@@ -323,14 +323,20 @@ $(document).ready(function()
 				{ 
 					$(this).jPlayer("pauseOthers");
 				},
-				solution: 'html',
-				supplied: 'oga, mp3',
+				swfPath: "plugins/jPlayer",
+				supplied: "mp3",
+				cssSelectorAncestor: "#jp_container_2",
+				wmode: "window",
+				globalVolume: false,
 				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+				solution: 'html',
 				preload: 'metadata',
 				volume: 0.2,
 				muted: false,
 				backgroundColor: '#000000',
-				cssSelectorAncestor: '#jp_container_2',
 				errorAlerts: false,
 				warningAlerts: false
 			};
@@ -382,6 +388,8 @@ $(document).ready(function()
 					var albumText = document.createTextNode(album);
 					var playButton = document.createElement('div');
 					var titleDiv = document.createElement('div');
+					var muteButton = document.createElement('div');
+					muteButton.className = "mute_button";
 					titleDiv.className = "featured_title";
 					var titleText = document.createTextNode(title);
 					titleDiv.append(titleText);
@@ -419,163 +427,13 @@ $(document).ready(function()
 						}
 					});
 				});
+				var mute_buttons = $('.mute_button');
 			},200);	
 		}
 	}
 
 
-	function initAlbumPlayer_2() {
-		if ($('#jplayer_3').length) {
-			var playlist_2 =
-				[
-					{
-						title: "Hai Triệu Năm",
-						artist: "Đen Vâu",
-						album: "Nhạc Chill",
-						mp3: "files/haitrieunam.mp3",
-						poster: "images/featured_1.jpg"
-					},
-					{
-						title: "Một triệu Like",
-						artist: "Đen Vâu",
-						album: "Nhạc Chill",
-						mp3: "files/mottrieulike.mp3",
-						poster: "images/featured_2.jpg"
-					},
-					{
-						title: "Trời hôm nay nhiều mây cực",
-						artist: "Đen Vâu",
-						album: "Nhạc Chill",
-						mp3: "files/troihomnaynhieumaycuc.mp3",
-						poster: "images/featured_3.jpg"
-					},
-					{
-						title: "Lối nhỏ",
-						artist: "Đen Vâu",
-						album: "Nhạc Chill",
-						mp3: "files/loinho.mp3",
-						poster: "images/featured_4.jpg"
-					},
-					{
-						title: "Bài này chill phết",
-						artist: "Đen Vâu",
-						album: "Nhạc Chill",
-						mp3: "files/bainaychillphet.mp3",
-						poster: "images/featured_5.jpg"
-					},
-					{
-						title: "Anh đếch cần gì nhiều ngoài em",
-						aartist: "Đen Vâu",
-						album: "Nhạc Chill",
-						mp3: "files/anhdechcanginhieungoaiem.mp3",
-						poster: "images/featured_6.jpg"
-					}
-				];
-
-			var options =
-			{
-				playlist_Options:
-				{
-					autoPlay: false,
-					enableRemoveControls: false
-				},
-				play: function () // To avoid multiple jPlayers playing together.
-				{
-					$(this).jPlayer("pauseOthers");
-				},
-				solution: 'html',
-				supplied: 'oga, mp3',
-				useStateClassSkin: true,
-				preload: 'metadata',
-				volume: 0.2,
-				muted: false,
-				backgroundColor: '#000000',
-				cssSelectorAncestor: '#jp_container_3',
-				errorAlerts: false,
-				warningAlerts: false
-			};
-
-			var cssSel =
-			{
-				jPlayer: "#jplayer_3",
-				cssSelectorAncestor: "#jp_container_3",
-				play: '.jp-play',
-				pause: '.jp-pause',
-				stop: '.jp-stop',
-				seekBar: '.jp-seek-bar',
-				playBar: '.jp-play-bar',
-				globalVolume: true,
-				mute: '.jp-mute',
-				unmute: '.jp-unmute',
-				volumeBar: '.jp-volume-bar',
-				volumeBarValue: '.jp-volume-bar-value',
-				volumeMax: '.jp-volume-max',
-				playbackRateBar: '.jp-playback-rate-bar',
-				playbackRateBarValue: '.jp-playback-rate-bar-value',
-				currentTime: '.jp-current-time',
-				duration: '.jp-duration',
-				title: '.jp-title',
-				fullScreen: '.jp-full-screen',
-				restoreScreen: '.jp-restore-screen',
-				repeat: '.jp-repeat',
-				repeatOff: '.jp-repeat-off',
-				gui: '.jp-gui',
-				noSolution: '.jp-no-solution'
-			};
-
-			var myPlaylist_2 = new jPlayerPlaylist_2(cssSel, playlist_2, options);
-
-
-			setTimeout(function () {
-				var items = $('.jp-playlist_2 ul li > div');
-				for (var x = 0; x < items_2.length; x++) {
-					var item = items_2[x];
-					var img = playlist_2[x].poster;
-					var album = playlist_2[x].album;
-					var title = playlist_2[x].title;
-					var imageDiv = document.createElement('div');
-					var imgx = document.createElement('img');
-					var albumDiv = document.createElement('div');
-					albumDiv.className = "featured_album";
-					var albumText = document.createTextNode(album);
-					var playButton = document.createElement('div');
-					var titleDiv = document.createElement('div');
-					titleDiv.className = "featured_title";
-					var titleText = document.createTextNode(title);
-					titleDiv.append(titleText);
-					playButton.className = 'album_play_button';
-					albumDiv.prepend(albumText);
-					imageDiv.className = "featured_image";
-					imgx.src = img;
-					imageDiv.append(imgx);
-					item.parentElement.append(imageDiv);
-					item.parentElement.append(playButton);
-					item.append(albumDiv);
-					item.append(titleDiv);
-				}
-
-				var buttons = $('.album_play_button');
-				buttons.each(function () {
-					var btn = $(this);
-					btn.on('click', function (e) {
-						var i = buttons.index(btn);
-						myPlaylist_2.select(i);
-
-						if (btn.hasClass('is-playing')) {
-							buttons.removeClass('is-playing');
-							myPlaylist_2.pause();
-							btn.removeClass('is-playing');
-						}
-						else {
-							buttons.removeClass('is-playing');
-							myPlaylist_2.play();
-							btn.addClass('is-playing');
-						}
-					});
-				});
-			}, 200);
-		}
-	}
+	
 
 	/* 
 
