@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -47,6 +47,7 @@ body
 	background: #FFFFFF;
 	color: #a5a5a5;
 }
+
 div
 {
 	display: block;
@@ -1720,7 +1721,23 @@ section
 {
 	color: #ffffff;
 }
+.new_post_vr_1 {
+	width: 2px;
+	background-color: #fccf31;
+	position:absolute;
+	top: 0;
+	bottom: 50px;
+	left: 380px;
+}
 
+.new_post_vr_2 {
+	width: 2px;
+	background-color: #fccf31;
+	position:absolute;
+	top: 0;
+	bottom: 50px;
+	right: 380px;
+}
 /*********************************
 11. Newsletter
 *********************************/
